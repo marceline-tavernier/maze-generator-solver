@@ -20,7 +20,7 @@ void setup() {
   frameRate(max(gridSizeX, gridSizeY));
 
   // Change the title of the window
-  surface.setTitle("Dimension code #1 : Maze generator and solver");
+  surface.setTitle("Dimension code : Maze generator and solver");
 
   // Set the colors to be on the color wheel
   colorMode(HSB, 360, 255, 255);
