@@ -1,5 +1,5 @@
 # Maze Generator and Solver
-Dimension code #1 : Maze generator and solver
+Dimension code : Maze generator and solver
 
 [Maze generator and solver video](https://user-images.githubusercontent.com/120074055/206572278-00055247-0409-405f-ade1-cacdd99fc68d.mp4)
 
