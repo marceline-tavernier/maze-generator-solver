@@ -4,7 +4,7 @@ int state;
 int gridSizeX = 121;
 int gridSizeY = 61;
 Cell[][] grid;
-int nWalls = int(max(gridSizeX, gridSizeY) / 4);
+int nWalls;
 ArrayList<Cell> scoreList;
 Cell path;
 
@@ -15,9 +15,6 @@ void setup() {
 
   // Size of 1280x640
   size(1280, 640);
-
-  // Make the frame rate the same as the grid size
-  frameRate(max(gridSizeX, gridSizeY));
 
   // Change the title of the window
   surface.setTitle("Dimension code : Maze generator and solver");
@@ -31,6 +28,12 @@ void setup() {
 
 // Setup the grid
 void setupGrid() {
+
+  // Make the frame rate the same as the grid size
+  frameRate(max(gridSizeX, gridSizeY));
+
+  // Setup number of walls to destroy
+  nWalls = int(max(gridSizeX, gridSizeY) / 4);
 
   // Setup the grid and the score list
   grid = new Cell[gridSizeX][gridSizeY];
@@ -476,10 +479,31 @@ void findPath() {
 // Detect when a key is released
 void keyReleased() {
 
-  // If R is pressed
+  // If R is pressed, resetup the grid back
   if (key == 'r' || key == 'R') {
-
-    // Then resetup the grid back
     setupGrid();
+  }
+
+  // If S is pressed, setup the grid back like th start
+  else if (key == 's' || key == 'S') {
+    gridSizeX = 121;
+    gridSizeY = 61;
+    setupGrid();
+  }
+
+  // If Up arrow is pressed, resetup grid one size larger
+  else if (key == CODED && keyCode == UP) {
+    gridSizeX += 4;
+    gridSizeY += 2;
+    setupGrid();
+  }
+
+  // If Down arrow is pressed, resetup grid one size smaller
+  else if (key == CODED && keyCode == DOWN) {
+    if (gridSizeY > 5 && gridSizeX > 5) {
+      gridSizeX -= 4;
+      gridSizeY -= 2;
+      setupGrid();
+    }
   }
 }
