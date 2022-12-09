@@ -1,7 +1,7 @@
 # Maze Generator and Solver
 Dimension code : Maze generator and solver
 
-[Maze generator and solver video](https://user-images.githubusercontent.com/120074055/206572278-00055247-0409-405f-ade1-cacdd99fc68d.mp4)
+[Maze generator and solver video](https://user-images.githubusercontent.com/120074055/206792123-fa5cfab0-3aea-4cbc-aca5-f2ba2848c54b.mp4)
 
 ## Description
 - Visualize the maze generator and solver
